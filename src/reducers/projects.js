@@ -1,4 +1,6 @@
-const projectInitialState = []
+const projectInitialState = [
+    {id:1, name:"cms", description:"cms"}
+]
 
 const projectsReducer = (state = projectInitialState, action) => {
     switch(action.type) {

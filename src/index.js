@@ -9,6 +9,12 @@ console.log('Hello World from Whom')
 
 const store = configureStore()
 
+store.subscribe(() => {
+    console.log(store.getState())
+})
+
+console.log(store.getState())
+
 const app = (
     <Provider store={store}>
         <App></App>

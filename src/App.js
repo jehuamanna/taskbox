@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Link} from 'react-router-dom'
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
-import {ProjectList} from './components/projects/lists'
+import ProjectList from './components/projects/lists'
+import ProjectAdd from './components/projects/add'
+import Dashboard from './components/dashboard/index'
 
 class App extends Component {
   render() {
@@ -15,11 +17,13 @@ class App extends Component {
             <li><Link to='tasks'> Tasks </Link></li>
           </ul>
 
-          <Route path='/' component={Dashboard} />
-          <Route path='/projects' component={ProjectList} />
+
+          <Route path='/' component={Dashboard} exact />
+          <Route path='/projects' component={ProjectList} exact/>
+          <Route path='/project/new' component={ProjectAdd} />
         </div>
       </BrowserRouter>
-      
+
     );
   }
 }
